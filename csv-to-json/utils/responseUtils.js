@@ -1,19 +1,18 @@
-export function success(body, headers) {
-  return buildResponse(body, headers, 200);
-}
+module.exports.success = function(body, headers) {
+  return this.buildResponse(body, headers, 200);
+};
 
-export function failure(body, headers) {
-  return buildResponse(body, headers, 500);
-}
+module.exports.failure = function(body, headers) {
+  return this.buildResponse(body, headers, 500);
+};
 
-function buildResponse(body, headers, statusCode) {
+module.exports.buildResponse = function(body, headers, statusCode) {
   return {
     statusCode: statusCode,
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-			...headers
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(body)
   };
-}
+};

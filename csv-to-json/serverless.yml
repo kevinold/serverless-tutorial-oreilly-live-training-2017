@@ -1,13 +1,9 @@
-service: csv-to-json-fluent
+service: csv-to-json-oreilly
 
 frameworkVersion: ">=1.8.0 <2.0.0"
 
 custom:
   config: ${file(./config/${opt:stage, self:provider.stage}.yml):config}
-  webpackIncludeModules: true
-
-plugins:
-  - serverless-webpack
 
 provider:
   name: aws

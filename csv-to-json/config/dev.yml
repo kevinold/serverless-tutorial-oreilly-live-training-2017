@@ -1,4 +1,4 @@
 config:
   csvFile: database.csv
   jsonFile: database.json
-  bucketName: com-fluentconf-data-dev-kevin
+  bucketName: csv-to-json-oreilly-kold-dev

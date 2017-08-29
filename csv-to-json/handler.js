@@ -1,5 +1,5 @@
-import AWS from 'aws-sdk';
-import { success, failure } from './utils/responseUtils';
+const AWS = require('aws-sdk');
+const responseUtils = require('./utils/responseUtils');
 
 const s3 = new AWS.S3();
 
@@ -8,10 +8,11 @@ const csvFile = process.env.CSV_FILE;
 const jsonFile = process.env.JSON_FILE;
 
 function processData(data) {
+  // Do something with data
 	return data;
 }
 
-export async function parseCSV(event, context, callback) {
+module.exports.parseCSV = (event, context, callback) => {
   s3.getObject({
     Bucket: bucket,
     Key: csvFile
@@ -50,7 +51,7 @@ export async function parseCSV(event, context, callback) {
   });
 };
 
-export function readJSON(event, context, callback) {
+module.exports.readJSON = (event, context, callback) => {
   s3.getObject({
     Bucket: bucket,
     Key: jsonFile
