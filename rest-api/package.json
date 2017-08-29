@@ -1,0 +1,14 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "REST API Serverless Demo",
+  "main": "",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.55.0",
+    "eslint": "^3.19.0"
+  }
+}
