@@ -1,0 +1,3 @@
+config:
+  jokesTable: kold-oreilly-jokes-dev
+  jokeAuthorsTable: kold-oreilly-jokeAuthors-dev
