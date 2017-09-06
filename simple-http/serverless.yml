@@ -1,4 +1,4 @@
-service: simple-http-fluent
+service: simple-http-oreilly-live
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
