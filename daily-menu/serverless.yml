@@ -1,0 +1,32 @@
+service: oreilly-live-daily-menu
+
+frameworkVersion: ">=1.8.0 <2.0.0"
+
+custom:
+  config: ${file(./config/${opt:stage, self:provider.stage}.yml):config}
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  checkMenu:
+    handler: handler.checkMenu
+    environment:
+      OCR_SPACE_API_KEY: ${self:custom.config.ocrSpaceApiKey}
+      MENU_URL: ${self:custom.config.menuUrl}
+    timeout: 30
+    events:
+      - schedule: cron(0 15 * * ? *) # 15 UTC, daily = 10am CST
+
+  checkMenuEndpoint:
+    handler: handler.checkMenu
+    environment:
+      OCR_SPACE_API_KEY: ${self:custom.config.ocrSpaceApiKey}
+      MENU_URL: ${self:custom.config.menuUrl}
+    timeout: 30
+    events:
+      - http:
+          path: checkMenu
+          method: get
+          cors: true

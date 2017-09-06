@@ -1,0 +1,17 @@
+{
+  "name": "daily-menu",
+  "version": "1.0.0",
+  "description": "Crontab Serverless Demo",
+  "main": "",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.55.0",
+    "axios": "^0.16.1"
+  }
+}
