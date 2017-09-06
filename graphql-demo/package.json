@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.55.0",
-    "graphql": "^0.10.1"
+    "graphql": "^0.10.1",
+    "js-yaml": "^3.9.1"
   }
 }
