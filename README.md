@@ -14,7 +14,6 @@ Examples to be used with the Building Simple Serverless Applications with AWS La
     - [Configure the AWS CLI to use the admin user](http://docs.aws.amazon.com/cli/latest/reference/configure/)
 
     - (Optional) [Install the AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) or update the version you have to the latest.
-4. Run `yarn install`
-5. Run `yarn run build:examples` (**Mac and Linux only -- may not work on Windows**) to download node dependencies for all examples **OR** run `yarn install` inside of each directory
+4. In each directory, run `yarn install`
 
 
