@@ -29,7 +29,7 @@ module.exports.parseCSV = (event, context, callback) => {
         ContentType: 'application/json',
         Body: JSON.stringify(resultJSON)
       }, (err, data) => {
-				callback(null, failure({err, data}));
+				callback(null, responseUtils.failure({err, data}));
         return data;
       });
 
@@ -42,10 +42,10 @@ module.exports.parseCSV = (event, context, callback) => {
       });
 
       try {
-				callback(null, success(resultJSON));
+				callback(null, responseUtils.success(resultJSON));
 			}
 			catch(err) {
-				callback(null, failure({ err }));
+				callback(null, responseUtils.failure({ err }));
 			}
     }
   });
@@ -60,10 +60,10 @@ module.exports.readJSON = (event, context, callback) => {
       console.log(err);
     } else {
       try {
-				callback(null, success(data.Body.toString()));
+				callback(null, responseUtils.success(data.Body.toString()));
 			}
 			catch(err) {
-				callback(null, failure({ err }));
+				callback(null, responseUtils.failure({ err }));
 			}
     }
   });
