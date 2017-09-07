@@ -8,12 +8,13 @@ module.exports = {
   //console.log('Query: ', requestBody.query);
   //console.log('Variables: ', requestBody.variables);
 
-  _graphql(publicSchema, requestBody.query, {}, null, requestBody.variables)
+  _graphql.graphql(publicSchema, requestBody.query, {}, null, requestBody.variables)
     .then(resp => {
-      //console.log('resp: ', resp);
+      console.log('resp: ', resp);
       callback(null, responseUtils.success(resp));
     })
     .catch(err => {
+      console.log('err: ', err);
       callback(null, responseUtils.failure(err));
     });
   },

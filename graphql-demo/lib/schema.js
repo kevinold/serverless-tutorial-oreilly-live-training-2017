@@ -22,6 +22,4 @@ const rootQuery = new _graphql.GraphQLObjectType({
 
 const publicSchema = new _graphql.GraphQLSchema({ query: rootQuery });
 
-module.exports = {
-  publicSchema: publicSchema
-};
+module.exports = publicSchema;
