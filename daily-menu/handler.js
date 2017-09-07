@@ -28,6 +28,6 @@ module.exports.checkMenu = function (event, context, callback) {
   })
 	.catch((err) => {
     console.log('ERROR: ', err);
-	  callback(null, failure(err.data));
+	  callback(null, responseUtils.failure(err.data));
 	});
 }
