@@ -13,8 +13,8 @@ module.exports.createJoke = function(event, callback) {
     TableName: jokesTable,
     Item: {
       id: uuid.v1(),
-      fullname: requestBody.fullname,
-      phone: requestBody.phone,
+      jokeBody: requestBody.jokeBody,
+      author: requestBody.author,
       createdAt: new Date().getTime()
     }
   };
@@ -74,12 +74,12 @@ module.exports.updateJoke = function(event, callback) {
       id: event.pathParameters.id
     },
     ExpressionAttributeValues: {
-      ":fullname": requestBody.fullname,
-      ":phone": requestBody.phone,
+      ":jokeBody": requestBody.jokeBody,
+      ":author": requestBody.author,
       ":updatedAt": new Date().getTime()
     },
     UpdateExpression:
-      "SET fullname = :fullname, phone = :phone, updatedAt = :updatedAt",
+      "SET jokeBody = :jokeBody, author = :author, updatedAt = :updatedAt",
     ReturnVAlues: "ALL_NEW"
   };
 
